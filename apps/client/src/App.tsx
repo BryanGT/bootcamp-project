@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { Button } from "./components/Button"
+import ExpensiveCalculationComponent from "./components/ExpensiveCalculationComponent"
+import Message from "./components/Mensaje"
+import ItemContainer from "./components/ItemList"
 
 function App() {
-  const [counter, setCounter] = useState(0)
 
   return (
     <main className="container flex flex-col gap-8 justify-center items-center min-h-screen p-8 text-center mx-auto">
@@ -9,12 +11,12 @@ function App() {
         Welcome to the Typescript Fullstack Project!
       </h1>
       <p>This is the client starting point 🚀</p>
-      <button
-        className="px-4 py-2 rounded-md bg-blue-600 text-white"
-        onClick={() => setCounter((v) => v + 1)}
-      >
-        Clicks: {counter}
-      </button>
+      <Button variant="secondary">
+        hello
+      </Button>
+      <Message text="Hola"/>
+      <ExpensiveCalculationComponent/>
+      <ItemContainer />
     </main>
   )
 }
