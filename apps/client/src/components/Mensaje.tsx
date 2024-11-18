@@ -5,16 +5,16 @@ type MessageProps = {
 };
 
 const Message = ({ text }: MessageProps): JSX.Element => {
-    /*const mensaje = useMemo(() => {
+    const mensaje = useMemo(() => {
         console.log("Generando mensaje");
         return text;
-    }, [text]);*/
+    }, [text]);
 
-    const mensaje = getMensaje();
+    /*const mensaje = getMensaje();
     function getMensaje() {
         console.log("generando mensaje");
         return text;
-    }
+    }*/
 
     return <h1>{mensaje}</h1>;
 };

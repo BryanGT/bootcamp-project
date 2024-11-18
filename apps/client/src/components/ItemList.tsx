@@ -42,7 +42,7 @@ export default ItemContainer;
 
 
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 type ItemListProps = {
   items: string[];

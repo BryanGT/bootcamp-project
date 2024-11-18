@@ -1,6 +1,5 @@
 import { Button } from "./components/Button"
 import ExpensiveCalculationComponent from "./components/ExpensiveCalculationComponent"
-import Message from "./components/Mensaje"
 import ItemContainer from "./components/ItemList"
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
       <Button variant="secondary">
         hello
       </Button>
-      <Message text="Hola"/>
       <ExpensiveCalculationComponent/>
       <ItemContainer />
     </main>

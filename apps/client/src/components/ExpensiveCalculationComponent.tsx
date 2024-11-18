@@ -29,7 +29,7 @@ export default ExpensiveCalculationComponent;
 */
 
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const ExpensiveCalculationComponent = () => {
   const [count, setCount] = useState<number>(0);
