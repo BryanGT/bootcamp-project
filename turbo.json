@@ -25,6 +25,9 @@
     "db:seed": {
       "cache": false
     },
+    "db:cleanup": {
+      "cache": false
+    },
     "db:stop": {
       "cache": false
     },

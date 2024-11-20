@@ -6,14 +6,20 @@
     "prisma-client-2e3a8b2290bad5386b49be16742323d6db7744b87b82d235e73fd4d2563e4683": "link:prisma/prisma-client"
   },
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./seed": "./scripts/seed/seed.ts",
+    "./cleanup": "./scripts/cleanup/cleanup.ts"
   },
   "scripts": {
     "db:start": "docker compose up -d",
     "db:stop": "docker compose down",
     "db:generate": "prisma generate",
     "db:migrate": "prisma db push --skip-generate",
-    "db:seed": "tsx ./src/seed.ts"
+    "db:seed": "tsx ./scripts/seed/index.ts",
+    "db:cleanup": "tsx ./scripts/cleanup/index.ts"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
