@@ -23,9 +23,21 @@ function Page() {
   }
 
   return (
-    <div className="text-center container mx-auto py-12">
-      <h1>{data.data?.name}</h1>
-      <p>{data.data?.description}</p>
+    <div className="container mx-auto py-12 px-4 max-w-3xl">
+      <div className="bg-white shadow-md rounded-lg overflow-hidden">
+        <img
+          src={data.data?.image || "https://via.placeholder.com/600"}
+          alt={data.data?.name}
+          className="w-full h-64 object-cover"
+        />
+        <div className="p-6">
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">{data.data?.name}</h1>
+          <p className="text-gray-600 text-lg mb-6">{data.data?.description}</p>
+          <p className="text-xl font-semibold text-green-600">
+            ${data.data?.price?.toFixed(2)}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

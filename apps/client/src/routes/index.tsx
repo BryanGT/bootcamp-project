@@ -3,7 +3,6 @@ import { Button } from '../components/Button'
 import ExpensiveCalculationComponent from '../components/ExpensiveCalculationComponent'
 import ItemContainer from '../components/ItemList'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ProductList } from '../components/ProductList'
 
 const queryClient = new QueryClient()
 
@@ -22,7 +21,6 @@ function Index() {
         <Button variant="secondary">hello</Button>
         <ExpensiveCalculationComponent />
         <ItemContainer />
-        <ProductList />
       </main>
     </QueryClientProvider>
   )

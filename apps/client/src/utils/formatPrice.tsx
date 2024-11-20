@@ -1,3 +1,10 @@
 export function formatPrice(value: number) {
-    return `$${(value / 100).toFixed(2)}`;
-  }
+  const formatter = Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+
+  return formatter.format(value / 100);
+
+  //return `$${(value / 100).toFixed(2)}`;
+}
