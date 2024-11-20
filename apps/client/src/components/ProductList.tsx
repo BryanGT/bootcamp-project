@@ -1,30 +1,15 @@
-import { useQuery } from "@tanstack/react-query"
-import { Product } from "@repo/schemas";
+import { useSuspenseQuery } from "@tanstack/react-query"
+import { useSearch } from '@tanstack/react-router';
 import { ProductCard } from "./ProductCard";
+import { productsQueryOptions } from '../utils/productsQueryOptions';
 
-export type ListProductsResponse = {
-    status: string;
-    data: Product[];
-};
 
 export const ProductList = () => {
-    const { status, data, error } = useQuery <ListProductsResponse> ({ 
-        queryKey: ['products'],
-        queryFn: () => {
-            console.log('fetch data');
-            return fetch('http://localhost:5001/api/products').then((result) => result.json())
-        }
-    })
+    const search = useSearch({ strict: false });
+    const { data } = useSuspenseQuery(productsQueryOptions(search));
 
-    console.log(status)
-    console.log(data)
-
-    if (status === 'pending') {
-        return <span>Loading...</span>
-    }
-
-    if (status === 'error') {
-        return <span>Error: {error.message}</span>
+    if (data.status === 'error') {
+        return <div>An error happened</div>;
     }
 
     return (

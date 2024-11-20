@@ -16,7 +16,8 @@ export class ProductsService {
 
     if (q) {
       where.name = {
-        contains: `'${q.replace(/[^a-zA-Z0-9\s]/g, '')}'`,
+        contains: q.replace(/[^a-zA-Z0-9\s]/g, ''), // Elimina caracteres especiales
+        mode: 'insensitive', // Hace la búsqueda no sensible a mayúsculas/minúsculas
       };
     }
 
