@@ -26,7 +26,7 @@ function Page() {
     <div className="container mx-auto py-12 px-4 max-w-3xl">
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
         <img
-          src={data.data?.image || "https://via.placeholder.com/600"}
+          src={data.data?.image || undefined}
           alt={data.data?.name}
           className="w-full h-64 object-cover"
         />
