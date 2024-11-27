@@ -16,7 +16,7 @@ const config: Config = {
   // cacheDirectory: "/private/var/folders/bd/t9_9cmv51xl_3j17k4j4b_kr0000gp/T/jest_dy",
 
   // Automatically clear mock calls, instances, contexts and results before every test
-  // clearMocks: false,
+  //clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: true,
@@ -146,7 +146,7 @@ const config: Config = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: 'jsdom',
+  // testEnvironment: "jest-environment-node",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
