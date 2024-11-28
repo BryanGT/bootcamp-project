@@ -18,7 +18,7 @@ function Index() {
           Welcome to the Typescript Fullstack Project!
         </h1>
         <p>This is the client starting point 🚀</p>
-        <Button variant="secondary">hello</Button>
+        <Button variant="secondary">Hola</Button>
         <ExpensiveCalculationComponent />
         <ItemContainer />
       </main>
