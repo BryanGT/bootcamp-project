@@ -34,14 +34,17 @@ jobs:
         echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" > ./packages/database/.env
         echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" > ./packages/database/.env
 
-    - name: Run Project
-      run: pnpm dlx turbo start
+    - name: Run Database
+      run: |
+        pnpm exec turbo db:start
+        pnpm exec turbo db:migrate
+        pnpm exec turbo db:seed
+    
+    - name: Run E2E tests
+      run: pnpm dlx turbo e2e:run
 
     - name: Run Unit tests
       run: pnpm dlx turbo test
-
-    - name: Run E2E tests
-      run: pnpm dlx turbo e2e:run
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
