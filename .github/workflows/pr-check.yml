@@ -24,16 +24,16 @@ jobs:
       run: pnpm install
 
     - name: Install Playwright Browsers
-      run: pnpm exec playwright install --with-deps
+      run: pnpm dlx playwright install --with-deps
 
     - name: Run Project
-      run: pnpm exec turbo dev
+      run: pnpm dlx turbo dev
 
     - name: Run Unit tests
-      run: pnpm exec turbo test
+      run: pnpm dlx turbo test
 
     - name: Run E2E tests
-      run: pnpm exec turbo e2e:run
+      run: pnpm dlx turbo e2e:run
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
