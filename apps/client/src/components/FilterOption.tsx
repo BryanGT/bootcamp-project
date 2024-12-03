@@ -7,7 +7,7 @@ type FilterOptionProps = {
 };
 
 export function FilterOption({ filterKey, value, name }: FilterOptionProps) {
-  const prev = useSearch({ strict: false });
+  const prev = useSearch({ strict: false }) as Record<string, unknown>;
 
   return (
     <Link

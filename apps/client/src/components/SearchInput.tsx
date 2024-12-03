@@ -8,6 +8,10 @@ export function SearchInput() {
   const prev = useSearch({ strict: false });
   const navigate = useNavigate();
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+  };
+
   useEffect(() => {
     if (debouncedInputValue.length === 0) {
       navigate({
@@ -31,7 +35,7 @@ export function SearchInput() {
       role="search"
       className="rounded-lg border border-slate-300 px-3 py-2 w-full"
       placeholder="Search..."
-      onChange={(e) => setInputValue(e.target.value)}
+      onChange={handleChange}
       value={inputValue}
     />
   );
