@@ -35,7 +35,7 @@ jobs:
         echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" > ./packages/database/.env
 
     - name: Run Project
-      run: pnpm dlx turbo dev
+      run: pnpm dlx turbo start
 
     - name: Run Unit tests
       run: pnpm dlx turbo test
