@@ -40,11 +40,12 @@ jobs:
         pnpm exec turbo db:migrate
         pnpm exec turbo db:seed
     
-    - name: Run E2E tests
-      run: pnpm dlx turbo e2e:run
-
+    
     - name: Run Unit tests
-      run: pnpm dlx turbo test
+      run: pnpm exec turbo test
+      
+    - name: Run E2E tests
+      run: pnpm exec turbo e2e:run
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
