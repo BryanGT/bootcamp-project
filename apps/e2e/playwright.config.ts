@@ -35,6 +35,17 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'setup',
+      testMatch: /global\.setup\.ts/,
+      teardown: 'cleanup',
+    },
+
+    {
+      name: 'cleanup',
+      testMatch: /global\.cleanup\.ts/,
+    },
+
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
@@ -76,6 +87,6 @@ export default defineConfig({
      url: 'http://localhost:4173',
      reuseExistingServer: true,
      cwd: '../../',
-     stderr: 'pipe',
+     stdout: 'pipe',
   },
 });

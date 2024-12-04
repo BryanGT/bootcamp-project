@@ -50,7 +50,6 @@ jobs:
     - name: Run database migrations
       run: |
         pnpm exec turbo db:migrate
-        pnpm exec turbo db:seed
 
     - name: Run unit tests
       run: pnpm exec turbo test
