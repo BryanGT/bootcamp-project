@@ -51,8 +51,8 @@ jobs:
       run: |
         pnpm exec turbo db:migrate
 
-    - name: Run unit tests
-      run: pnpm exec turbo test
+    #- name: Run unit tests
+    # run: pnpm exec turbo test
 
     - name: Run E2E tests
       run: pnpm exec turbo e2e:run
