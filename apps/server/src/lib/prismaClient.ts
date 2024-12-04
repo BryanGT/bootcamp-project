@@ -1,3 +1,3 @@
-import { PrismaClient as PrismaClientAlias } from '../../../../packages/database/prisma/prisma-client'
+import { PrismaClient } from '@repo/db';
 
-export const prisma: PrismaClientAlias = new PrismaClientAlias();
+export const prisma = new PrismaClient();
