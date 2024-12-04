@@ -16,8 +16,7 @@ export class ProductsService {
 
     if (q) {
       where.name = {
-        contains: q.replace(/[^a-zA-Z0-9\s]/g, ''), // Elimina caracteres especiales
-        mode: 'insensitive', // Hace la búsqueda no sensible a mayúsculas/minúsculas
+        contains: `'${q.replace(/[^a-zA-Z0-9\s]/g, '')}'`,
       };
     }
 
@@ -32,24 +31,20 @@ export class ProductsService {
       },
     });
 
-    const items = result.map((item) => {
-      const price = item.variants.length > 0 ? item.variants[0].price : 0;
-    
-      return {
-        id: item.id,
-        name: item.name,
-        description: item.description,
-        image: item.image,
-        price,
-      };
-    });
+    const items = result.map((item) => ({
+      id: item.id,
+      name: item.name,
+      description: item.description,
+      image: item.image,
+      price: item.variants[0].price,
+    }));
 
     if (sort === 'price-asc') {
-      items.sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity));
+      items.sort((a, b) => a.price - b.price);
     }
-    
+
     if (sort === 'price-desc') {
-      items.sort((a, b) => (b.price ?? -Infinity) - (a.price ?? -Infinity));
+      items.sort((a, b) => b.price - a.price);
     }
 
     return items;
