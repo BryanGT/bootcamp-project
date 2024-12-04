@@ -28,7 +28,7 @@ jobs:
       run: pnpm dlx playwright install --with-deps
 
     - name: Verify Environment Variables
-      run: echo $DATABASE_URL
+      run: echo ${{ secrets.DATABASE_URL }}
 
     - name: Run database create .env file
       run: | 
